@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Appointment Management</title>
+    <link rel="stylesheet" href="../CSS/appointment-management.css" />
+  </head>
+  <body>
+    <!-- Header Navigation -->
+    <header>
+      <div class="container nav-container">
+        <nav>
+          <div class="nav__logo" onclick="window.location.href='../index.html'">
+            TickDoc
+          </div>
+          <ul class="nav__links">
+            <li class="link"><a href="../index.html">Home</a></li>
+            <li class="link">
+              <a href="../patient/appointment-booking.html"
+                >Book Appointments</a
+              >
+            </li>
+            <li class="link">
+              <a href="../patient/appointment-management.html"
+                >Manage Appointments</a
+              >
+            </li>
+            <li class="link"><a href="../contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Appointment Management Section -->
+    <section class="appointment-management-section">
+      <div class="container">
+        <h1>Upcoming Appointments</h1>
+
+        <!-- List of Upcoming Appointments -->
+        <div class="appointment-list">
+          <!-- Sample Appointment 1 -->
+          <div class="appointment-card">
+            <div class="appointment-info">
+              <h3>Dr. John Doe - Aged Care</h3>
+              <p><strong>Date:</strong> 2025-03-25</p>
+              <p><strong>Time:</strong> 10:00 AM</p>
+              <p><strong>Location:</strong> Health Clinic, 123 Main St.</p>
+              <button class="cancel-btn">Cancel Appointment</button>
+            </div>
+            <div class="doctor-photo">
+              <img src="../assets/doctor1.jpg" alt="Dr. John Doe" />
+            </div>
+          </div>
+
+          <!-- Sample Appointment 2 -->
+          <div class="appointment-card">
+            <div class="appointment-info">
+              <h3>Dr. Emily Smith - Women's Health</h3>
+              <p><strong>Date:</strong> 2025-03-26</p>
+              <p><strong>Time:</strong> 2:00 PM</p>
+              <p>
+                <strong>Location:</strong> Women's Health Center, 456 Oak St.
+              </p>
+              <button class="cancel-btn">Cancel Appointment</button>
+            </div>
+            <div class="doctor-photo">
+              <img src="../assets/doctor2.jpg" alt="Dr. Emily Smith" />
+            </div>
+          </div>
+
+          <!-- Sample Appointment 3 -->
+          <div class="appointment-card">
+            <div class="appointment-info">
+              <h3>Dr. Michael Lee - General Health</h3>
+              <p><strong>Date:</strong> 2025-03-28</p>
+              <p><strong>Time:</strong> 9:30 AM</p>
+              <p>
+                <strong>Location:</strong> General Health Clinic, 789 Pine St.
+              </p>
+              <button class="cancel-btn">Cancel Appointment</button>
+            </div>
+            <div class="doctor-photo">
+              <img src="../assets/doctor3.jpg" alt="Dr. Michael Lee" />
+            </div>
+          </div>
+        </div>
+
+        <h1>Past Appointments</h1>
+
+        <!-- List of Past Appointments -->
+        <div class="appointment-list">
+          <!-- Sample Past Appointment 1 -->
+          <div class="appointment-card past">
+            <div class="appointment-info">
+              <h3>Dr. John Doe - Aged Care</h3>
+              <p><strong>Date:</strong> 2025-03-10</p>
+              <p><strong>Time:</strong> 11:00 AM</p>
+              <p><strong>Location:</strong> Health Clinic, 123 Main St.</p>
+              <p><strong>Status:</strong> Completed</p>
+            </div>
+            <div class="doctor-photo">
+              <img src="../assets/doctor1.jpg" alt="Dr. John Doe" />
+            </div>
+          </div>
+
+          <!-- Sample Past Appointment 2 -->
+          <div class="appointment-card past">
+            <div class="appointment-info">
+              <h3>Dr. Emily Smith - Women's Health</h3>
+              <p><strong>Date:</strong> 2025-03-05</p>
+              <p><strong>Time:</strong> 1:00 PM</p>
+              <p>
+                <strong>Location:</strong> Women's Health Center, 456 Oak St.
+              </p>
+              <p><strong>Status:</strong> Completed</p>
+            </div>
+            <div class="doctor-photo">
+              <img src="../assets/doctor2.jpg" alt="Dr. Emily Smith" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="appointment-management.js"></script>
+  </body>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <h2>TickDoc</h2>
+          <p>Your trusted healthcare appointment system.</p>
+        </div>
+
+        <div class="footer-contact">
+          <h3>Contact Us</h3>
+          <p>Email: support@tickdoc.com</p>
+          <p>Phone: +94 712 345 678</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 TickDoc. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+</html>

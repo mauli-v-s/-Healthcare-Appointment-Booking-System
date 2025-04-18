@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Appointment Schedule Management - MedConnect</title>
+    <link rel="stylesheet" href="../CSS/schedule-management.css" />
+    <script>
+      const appointments = [
+        {
+          patientName: "Alice Johnson",
+          dob: "1988-07-10",
+          symptoms: "Allergy, Cough",
+          time: "10:00 AM",
+          status: "Booked",
+          profile: "../assets/image2.jpg",
+        },
+        {
+          patientName: "David Martinez",
+          dob: "1995-12-05",
+          symptoms: "Fever, Sore Throat",
+          time: "10:30 AM",
+          status: "Booked",
+          profile: "../assets/image1.jpg",
+        },
+        {
+          patientName: "Sophia Lee",
+          dob: "1993-04-20",
+          symptoms: "Migraine",
+          time: "11:00 AM",
+          status: "Available",
+          profile: "../assets/image4.jpg",
+        },
+        {
+          patientName: "James Brown",
+          dob: "1980-11-15",
+          symptoms: "Joint Pain",
+          time: "11:30 AM",
+          status: "Available",
+          profile: "../assets/image3.jpg",
+        },
+      ];
+
+      function markUnavailable(time) {
+        const slot = document.getElementById(`slot-${time}`);
+        slot.classList.add("unavailable");
+        slot.querySelector(".status").innerText = "Unavailable";
+        slot.querySelector(".mark-btn").style.display = "none";
+      }
+
+      function renderAppointments() {
+        const appointmentsList = document.getElementById("appointments-list");
+        appointmentsList.innerHTML = "";
+
+        appointments.forEach((appointment) => {
+          const appointmentCard = document.createElement("div");
+          appointmentCard.classList.add("appointment-card");
+
+          appointmentCard.innerHTML = `
+                    <div class="appointment-content">
+                        <div class="appointment-details">
+                            <h3>${appointment.patientName}</h3>
+                            <p><strong>Date of Birth:</strong> ${appointment.dob}</p>
+                            <p><strong>Symptoms:</strong> ${appointment.symptoms}</p>
+                            <p><strong>Time:</strong> ${appointment.time}</p>
+                            <p><strong>Status:</strong> <span class="status">${appointment.status}</span></p>
+                        </div>
+                        <div class="appointment-profile">
+                            <img src="${appointment.profile}" alt="${appointment.patientName}" class="profile-img">
+                        </div>
+                    </div>
+                `;
+
+          appointmentsList.appendChild(appointmentCard);
+        });
+      }
+
+      function renderSlots() {
+        const slotsContainer = document.getElementById("slots-container");
+        const timeSlots = ["10:00 AM", "10:30 AM", "11:00 AM", "11:30 AM"];
+
+        timeSlots.forEach((time) => {
+          const slot = document.createElement("div");
+          slot.classList.add("slot");
+          slot.id = `slot-${time}`;
+
+          slot.innerHTML = `
+                    <p><strong>Time:</strong> ${time}</p>
+                    <p class="status">Available</p>
+                    <button class="mark-btn" onclick="markUnavailable('${time}')">Mark Unavailable</button>
+                `;
+
+          slotsContainer.appendChild(slot);
+        });
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        renderAppointments();
+        renderSlots();
+      });
+    </script>
+  </head>
+  <body>
+    <header>
+      <div class="container nav-container">
+        <nav>
+          <div class="nav__logo" onclick="window.location.href='index.html'">
+            TickDoc
+          </div>
+          <ul class="nav__links">
+            <li class="link"><a href="../index.html">Home</a></li>
+            <li class="link"><a href="#">Manage Appointments</a></li>
+            <li class="link"><a href="../contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <section class="appointment-schedule-management-section">
+      <div class="container">
+        <h1>Appointment Schedule Management</h1>
+
+        <div class="appointments">
+          <h2>Your Appointments</h2>
+          <div class="appointments-list" id="appointments-list"></div>
+        </div>
+
+        <div class="available-slots">
+          <h2>Manage Your Time Slots</h2>
+          <div class="slots-container" id="slots-container"></div>
+        </div>
+      </div>
+    </section>
+  </body>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <h2>TickDoc</h2>
+          <p>Your trusted healthcare appointment system.</p>
+        </div>
+
+        <div class="footer-contact">
+          <h3>Contact Us</h3>
+          <p>Email: support@tickdoc.com</p>
+          <p>Phone: +94 712 345 678</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 TickDoc. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+</html>
