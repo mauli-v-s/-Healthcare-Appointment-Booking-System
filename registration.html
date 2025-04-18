@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration - MedConnect</title>
+    <link rel="stylesheet" href="CSS/registration.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container nav-container">
+        <nav>
+          <div class="nav__logo" onclick="window.location.href='index.html'">
+            TickDoc
+          </div>
+          <ul class="nav__links">
+            <li class="link"><a href="index.html">Home</a></li>
+            <li class="link"><a href="login.html">Login</a></li>
+            <li class="link">
+              <a href="viewappoinment.html">View Appointments</a>
+            </li>
+            <li class="link">
+              <a href="contact.html" id="appointments-link">Contact</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <section class="registration-section">
+      <div class="container">
+        <div class="form-container">
+          <h1>Create an Account</h1>
+
+          <div class="tabs">
+            <button
+              class="tab-btn active"
+              id="patient-tab"
+              onclick="toggleForm('patient')"
+            >
+              Patient
+            </button>
+            <button
+              class="tab-btn"
+              id="doctor-tab"
+              onclick="toggleForm('doctor')"
+            >
+              Doctor
+            </button>
+          </div>
+
+          <!-- Patient Form -->
+          <form
+            id="patient-form"
+            class="registration-form"
+            onsubmit="return handlePatientSubmit(event)"
+          >
+            <div class="form-group">
+              <label for="patient-firstname">First Name *</label>
+              <input
+                type="text"
+                id="patient-firstname"
+                name="firstname"
+                required
+                placeholder="Please enter your first name"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="patient-lastname">Last Name *</label>
+              <input
+                type="text"
+                id="patient-lastname"
+                name="lastname"
+                required
+                placeholder="Please enter your last name"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="patient-email">Email Address *</label>
+              <input
+                type="email"
+                id="patient-email"
+                name="email"
+                required
+                placeholder="Please enter a valid email"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="patient-mobilenum">Mobile Number *</label>
+              <input
+                type="text"
+                id="patient-mobilenum"
+                name="mobilenum"
+                required
+                placeholder="Please enter a valid Mobile Number"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="patient-birthday">Date of Birth *</label>
+              <input
+                type="date"
+                id="patient-birthday"
+                name="birthday"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="patient-health">Health Insurance Provider *</label>
+              <input
+                type="text"
+                id="patient-health"
+                name="health"
+                required
+                placeholder="Please enter your health insurance provider"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="patient-password">Password *</label>
+              <input
+                type="password"
+                id="patient-password"
+                name="password"
+                required
+                placeholder="Must be 5-12 characters, contain 2 uppercase letters, 1 number, and 1 special character"
+              />
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" class="btn">Register</button>
+            </div>
+          </form>
+
+          <!-- Doctor Form -->
+          <form
+            id="doctor-form"
+            class="registration-form"
+            style="display: none"
+            onsubmit="return handleDoctorSubmit(event)"
+          >
+            <div class="form-group">
+              <label for="doctor-firstname">First Name *</label>
+              <input
+                type="text"
+                id="doctor-firstname"
+                name="firstname"
+                required
+                placeholder="Please enter your first name"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="doctor-lastname">Last Name *</label>
+              <input
+                type="text"
+                id="doctor-lastname"
+                name="lastname"
+                required
+                placeholder="Please enter your last name"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="doctor-email">Email Address *</label>
+              <input
+                type="email"
+                id="doctor-email"
+                name="email"
+                required
+                placeholder="Please enter a valid email"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="doctor-mobilenum">Mobile Number *</label>
+              <input
+                type="text"
+                id="doctor-mobilenum"
+                name="mobilenum"
+                required
+                placeholder="Please enter a valid Mobile Number"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="doctor-gender">Gender *</label>
+              <select id="doctor-gender" name="gender" required>
+                <option value="" disabled selected>Select your gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="doctor-areaofinterest">Area of Interest *</label>
+              <select id="doctor-areaofinterest" name="areaofinterest" required>
+                <option value="" disabled selected>
+                  Select your area of interest
+                </option>
+                <option value="Aged Care">Aged Care</option>
+                <option value="Children’s Health">Children’s Health</option>
+                <option value="General Health">General Health</option>
+                <option value="Men’s Health">Men’s Health</option>
+                <option value="Women’s Health">Women’s Health</option>
+                <option value="Mental Health">Mental Health</option>
+                <option value="Travel Medicine">Travel Medicine</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="doctor-qualification">Qualification *</label>
+              <input
+                type="text"
+                id="doctor-qualification"
+                name="qualification"
+                required
+                placeholder="e.g., MBBS, FRACGP"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="doctor-password">Password *</label>
+              <input
+                type="password"
+                id="doctor-password"
+                name="password"
+                required
+                placeholder="Must be 5-12 characters, contain 2 uppercase letters, 1 number, and 1 special character"
+              />
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" class="btn">Register</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      function toggleForm(type) {
+        document.getElementById("patient-form").style.display =
+          type === "patient" ? "block" : "none";
+        document.getElementById("doctor-form").style.display =
+          type === "doctor" ? "block" : "none";
+        document
+          .getElementById("patient-tab")
+          .classList.toggle("active", type === "patient");
+        document
+          .getElementById("doctor-tab")
+          .classList.toggle("active", type === "doctor");
+      }
+
+      function handlePatientSubmit(event) {
+        event.preventDefault();
+        window.location.href = "patient/appointment-booking.html";
+      }
+
+      function handleDoctorSubmit(event) {
+        event.preventDefault();
+        window.location.href = "doctor/schedule-management.html";
+      }
+    </script>
+  </body>
+</html>

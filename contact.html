@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="CSS/contact.css" />
+  </head>
+  <body>
+    <nav>
+      <div class="nav__logo" onclick="window.location.href='index.html'">
+        TickDoc
+      </div>
+      <ul class="nav__links">
+        <li class="link"><a href="index.html">Home</a></li>
+        <li class="link"><a href="login.html">Login</a></li>
+        <li class="link">
+          <a href="viewappoinment.html">View Appointments</a>
+        </li>
+        <li class="link"><a href="contact.html">Contact</a></li>
+      </ul>
+      <button class="btn" onclick="window.location.href='registration.html'">
+        Register Now
+      </button>
+    </nav>
+
+    <section class="contact-section">
+      <div class="container">
+        <h2 class="section-title">Contact Us</h2>
+        <p class="contact-description">
+          We’d love to hear from you! Fill out the form below or reach out
+          through our contact details.
+        </p>
+
+        <div class="contact-container">
+          <div class="contact-info">
+            <h3>Our Office</h3>
+            <p>123 Street Name, City, Country</p>
+            <h3>Email</h3>
+            <p>contact@yourwebsite.com</p>
+            <h3>Phone</h3>
+            <p>+123 456 7890</p>
+          </div>
+
+          <form class="contact-form">
+            <input type="text" placeholder="Your Name" required />
+            <input type="email" placeholder="Your Email" required />
+            <textarea placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit" class="btn">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-logo">
+            <h2>TickDoc</h2>
+            <p>Your trusted healthcare appointment system.</p>
+          </div>
+          <div class="footer-links">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="login.html">Login</a></li>
+              <li>
+                <a href="viewappoinment.html" id="appointments-link"
+                  >View Appointments</a
+                >
+              </li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-contact">
+            <h3>Contact Us</h3>
+            <p>Email: support@tickdoc.com</p>
+            <p>Phone: +94 712 345 678</p>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 TickDoc. All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
